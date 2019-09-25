@@ -53,6 +53,30 @@ public class MainActivityTest {
             .check(matches(hasErrorText(activityRule.getActivity().getString(R.string.main_invalid_height))));
     }
 
+    @Test
+    public void should_txtWeight_show_error_when_0() {
+        onView(withId(R.id.txtWeight))
+            .perform(typeText("0"), closeSoftKeyboard());
+        onView(withId(R.id.txtHeight))
+            .perform(typeText("2"), closeSoftKeyboard());
+        onView(withId(R.id.btnCalculate)).perform(click());
+
+        onView(withId(R.id.txtWeight))
+            .check(matches(hasErrorText(activityRule.getActivity().getString(R.string.main_invalid_weight))));
+    }
+
+    @Test
+    public void should_txtHeight_show_error_when_0() {
+        onView(withId(R.id.txtWeight))
+            .perform(typeText("100"), closeSoftKeyboard());
+        onView(withId(R.id.txtHeight))
+            .perform(typeText("0"), closeSoftKeyboard());
+        onView(withId(R.id.btnCalculate)).perform(click());
+
+        onView(withId(R.id.txtHeight))
+            .check(matches(hasErrorText(activityRule.getActivity().getString(R.string.main_invalid_height))));
+    }
+
     // Reset button works.
 
     @Test
@@ -104,6 +128,18 @@ public class MainActivityTest {
         onView(withId(R.id.txtHeight))
             .check(matches(hasFocus()));
 
+    }
+
+    // Correct initial state.
+
+    @Test
+    public void should_have_correct_initial_state() {
+        onView(withId(R.id.txtWeight))
+            .check(matches(withText("")));
+        onView(withId(R.id.txtHeight))
+            .check(matches(withText("")));
+        onView(withId(R.id.imgBmi))
+            .check(matches(new DrawableMatcher(R.drawable.bmi)));
     }
 
 }

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import static es.iessaladillo.pedrojoya.pr01.bmi.BmiClasification.*;
+import static es.iessaladillo.pedrojoya.pr01.bmi.BmiCalculator.BmiClasification.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -45,7 +45,7 @@ class BmiCalculatorTest {
     void should_return_LOW_WEIGHT(float bmi) {
         BmiCalculator sut = new BmiCalculator();
 
-        BmiClasification actual = sut.getBmiClasification(bmi);
+        BmiCalculator.BmiClasification actual = sut.getBmiClasification(bmi);
 
         assertEquals(LOW_WEIGHT, actual);
     }
@@ -56,7 +56,7 @@ class BmiCalculatorTest {
     void should_return_normal_weight(float bmi) {
         BmiCalculator sut = new BmiCalculator();
 
-        BmiClasification actual = sut.getBmiClasification(bmi);
+        BmiCalculator.BmiClasification actual = sut.getBmiClasification(bmi);
 
         assertEquals(NORMAL_WEIGHT, actual);
     }
@@ -67,7 +67,7 @@ class BmiCalculatorTest {
     void should_return_overweight(float bmi) {
         BmiCalculator sut = new BmiCalculator();
 
-        BmiClasification actual = sut.getBmiClasification(bmi);
+        BmiCalculator.BmiClasification actual = sut.getBmiClasification(bmi);
 
         assertEquals(OVERWWEIGHT, actual);
     }
@@ -78,7 +78,7 @@ class BmiCalculatorTest {
     void should_return_obesity_grade1(float bmi) {
         BmiCalculator sut = new BmiCalculator();
 
-        BmiClasification actual = sut.getBmiClasification(bmi);
+        BmiCalculator.BmiClasification actual = sut.getBmiClasification(bmi);
 
         assertEquals(OBESITY_GRADE_1, actual);
     }
@@ -89,7 +89,7 @@ class BmiCalculatorTest {
     void should_return_obesity_grade2(float bmi) {
         BmiCalculator sut = new BmiCalculator();
 
-        BmiClasification actual = sut.getBmiClasification(bmi);
+        BmiCalculator.BmiClasification actual = sut.getBmiClasification(bmi);
 
         assertEquals(OBESITY_GRADE_2, actual);
     }
@@ -100,7 +100,7 @@ class BmiCalculatorTest {
     void should_return_obesity_grade3(float bmi) {
         BmiCalculator sut = new BmiCalculator();
 
-        BmiClasification actual = sut.getBmiClasification(bmi);
+        BmiCalculator.BmiClasification actual = sut.getBmiClasification(bmi);
 
         assertEquals(OBESITY_GRADE_3, actual);
     }

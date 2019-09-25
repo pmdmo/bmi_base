@@ -1,12 +1,5 @@
 package es.iessaladillo.pedrojoya.pr01.bmi;
 
-import static es.iessaladillo.pedrojoya.pr01.bmi.BmiClasification.LOW_WEIGHT;
-import static es.iessaladillo.pedrojoya.pr01.bmi.BmiClasification.NORMAL_WEIGHT;
-import static es.iessaladillo.pedrojoya.pr01.bmi.BmiClasification.OBESITY_GRADE_1;
-import static es.iessaladillo.pedrojoya.pr01.bmi.BmiClasification.OBESITY_GRADE_2;
-import static es.iessaladillo.pedrojoya.pr01.bmi.BmiClasification.OBESITY_GRADE_3;
-import static es.iessaladillo.pedrojoya.pr01.bmi.BmiClasification.OVERWWEIGHT;
-
 /**
  * Allow Bmi calculation and clasification
  */
@@ -30,4 +23,7 @@ public class BmiCalculator {
         // TODO
     }
 
+    public enum BmiClasification {
+        LOW_WEIGHT, NORMAL_WEIGHT, OVERWWEIGHT, OBESITY_GRADE_1, OBESITY_GRADE_2, OBESITY_GRADE_3
+    }
 }
